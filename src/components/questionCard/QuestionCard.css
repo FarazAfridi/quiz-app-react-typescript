@@ -1,0 +1,95 @@
+.container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    height: 70vh;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+.quiz_answer {
+    display: flex;
+    flex-direction: column;
+}
+.answer{
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
+    border: none;
+    width: 90%;
+    height: 90%;
+    font-size: 1.3rem;
+    margin: 5px;
+    box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
+    border-radius: 10px;
+}
+.answer:active{
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+}
+.answer:hover{
+    background-color: black;
+    color: white;
+}
+.question {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+.number {
+    font-size: 1.5rem;
+}
+.score {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+  @media only screen and (max-width: 570px){
+    
+    .number {
+        font-size: 1.3rem;
+    }
+
+    .question {
+        font-size: 1.4rem;
+        margin-bottom: 20px;
+    }
+
+    .answer{
+        font-size: 1rem;
+        margin-bottom: 18px;
+    }
+
+  }
+
+  @media only screen and (max-width: 320px){
+
+    .answer {
+        font-size: 0.8rem;
+    }
+
+    .question {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+    .container {
+        height: 60vh;
+    }
+  }
+
+  @media only screen and (min-height: 1366px) {
+    .answer {
+        font-size: 2rem;
+    }
+
+    .question {
+        font-size: 2rem;
+        margin-bottom: 60px;
+    }
+    .container {
+        height: 50vh;
+    }
+    .score, .number {
+        font-size: 2rem;
+    }
+  }
