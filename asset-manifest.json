@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/FarazAfridi/quiz-app-react-typescript/static/css/main.4b1f0e93.chunk.css",
+    "main.js": "/FarazAfridi/quiz-app-react-typescript/static/js/main.eb0f08e6.chunk.js",
+    "main.js.map": "/FarazAfridi/quiz-app-react-typescript/static/js/main.eb0f08e6.chunk.js.map",
+    "runtime-main.js": "/FarazAfridi/quiz-app-react-typescript/static/js/runtime-main.b4122121.js",
+    "runtime-main.js.map": "/FarazAfridi/quiz-app-react-typescript/static/js/runtime-main.b4122121.js.map",
+    "static/js/2.dfcdf73a.chunk.js": "/FarazAfridi/quiz-app-react-typescript/static/js/2.dfcdf73a.chunk.js",
+    "static/js/2.dfcdf73a.chunk.js.map": "/FarazAfridi/quiz-app-react-typescript/static/js/2.dfcdf73a.chunk.js.map",
+    "index.html": "/FarazAfridi/quiz-app-react-typescript/index.html",
+    "precache-manifest.95c121d53c238017261ce314116b3313.js": "/FarazAfridi/quiz-app-react-typescript/precache-manifest.95c121d53c238017261ce314116b3313.js",
+    "service-worker.js": "/FarazAfridi/quiz-app-react-typescript/service-worker.js",
+    "static/css/main.4b1f0e93.chunk.css.map": "/FarazAfridi/quiz-app-react-typescript/static/css/main.4b1f0e93.chunk.css.map",
+    "static/js/2.dfcdf73a.chunk.js.LICENSE.txt": "/FarazAfridi/quiz-app-react-typescript/static/js/2.dfcdf73a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b4122121.js",
+    "static/js/2.dfcdf73a.chunk.js",
+    "static/css/main.4b1f0e93.chunk.css",
+    "static/js/main.eb0f08e6.chunk.js"
+  ]
+}
