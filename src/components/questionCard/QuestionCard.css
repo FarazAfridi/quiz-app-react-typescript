@@ -2,7 +2,7 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
-    width: 70vw;
+    width: 80vw;
     height: 70vh;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
@@ -45,13 +45,15 @@
 }
 
   @media only screen and (max-width: 570px){
-    
+    /* .container{
+        height: 80vh;
+    } */
     .number {
         font-size: 1.3rem;
     }
 
     .question {
-        font-size: 1.4rem;
+        font-size: 1rem;
         margin-bottom: 20px;
     }
 
@@ -69,11 +71,10 @@
     }
 
     .question {
-        font-size: 1.2rem;
         margin-bottom: 20px;
     }
     .container {
-        height: 60vh;
+        height: 70vh;
     }
   }
 

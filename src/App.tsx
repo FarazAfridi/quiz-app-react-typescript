@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { QuestionState, answerObject } from './types/types';
 import { fetchQuizQuestion } from "./API/API";
 import QuestionCard from './components/questionCard/QuestionCard';
+import { notificationFunc } from "./firebase";
 
 const App: React.FC = () => {
+
+  useEffect(() => {
+    notificationFunc();
+  }, [])
 
   // let questionNumber = 10;
   let difficultyLevel = "easy";
@@ -19,7 +24,7 @@ const App: React.FC = () => {
 
   console.log(questions);
 
-  
+
   const diffcultyPicker = (diff: React.FormEvent<HTMLSelectElement>) => {
     difficultyLevel = diff.currentTarget.value;
     setGameOver(true);
@@ -31,21 +36,19 @@ const App: React.FC = () => {
     console.log(questionNumber)
   }
 
-     const startTrivia = async () => {
-      setLoading(true);
-      setGameOver(false);
-  
-      const newQuestions = await fetchQuizQuestion(questionNumber, difficultyLevel)
-  
-      setQuestions(newQuestions);
-      setScore(0);
-      setUserAnswers([]);
-      setNumber(0);
-      setLoading(false);
-  
-    }
+  const startTrivia = async () => {
+    setLoading(true);
+    setGameOver(false);
 
- 
+    const newQuestions = await fetchQuizQuestion(questionNumber, difficultyLevel)
+
+    setQuestions(newQuestions);
+    setScore(0);
+    setUserAnswers([]);
+    setNumber(0);
+    setLoading(false);
+
+  }
 
   const checkAnswer = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (!gameOver) {
@@ -65,7 +68,7 @@ const App: React.FC = () => {
 
   const nextQuestion = () => {
     const nextQuestion = number + 1;
-    
+
     if (nextQuestion === questionNumber) {
       setGameOver(true);
     } else {
@@ -77,23 +80,25 @@ const App: React.FC = () => {
     <div className={`${gameOver ? "main_container" : null}`}>
       <h1>React Quiz</h1>
       {gameOver || userAnswers.length === questionNumber ? (
-      <div>
-      <select style={{width: '50%', marginTop: '30px', fontSize: '20px'}} onChange={(e: React.FormEvent<HTMLSelectElement>) => diffcultyPicker(e)}>
-        <option value="easy">Easy</option>
-        <option value="medium">Medium</option>
-        <option value="hard">Hard</option>
-      </select>
-      <br/>
-      <select style={{width: '50%', margin: '20px 0', fontSize: '20px'}} onChange={(e: React.FormEvent<HTMLSelectElement>) => QuestionNumberPicker(e)}>
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-      </select>
-      <br/>
-      <button className="btn" onClick={startTrivia}>Start</button>
+        <div>
+          <select style={{ width: '50%', marginTop: '30px', fontSize: '20px' }} onChange={(e: React.FormEvent<HTMLSelectElement>) => diffcultyPicker(e)}>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+          <br />
+          <select style={{ width: '50%', margin: '20px 0', fontSize: '20px' }} onChange={(e: React.FormEvent<HTMLSelectElement>) => QuestionNumberPicker(e)}>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <br />
+          <button className="btn" onClick={() => { 
+             startTrivia();
+            }}>Start</button>
 
-      </div>
+        </div>
       ) : null}
 
       {loading ? <p>Loading Questions...</p> : null}
@@ -109,7 +114,7 @@ const App: React.FC = () => {
         />
       )}
       {!gameOver && !loading && userAnswers.length === number + 1 ? (
-        <button className='btn' onClick={nextQuestion }>
+        <button className='btn' onClick={nextQuestion}>
           Next Question
         </button>
       ) : null}
